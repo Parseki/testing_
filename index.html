@@ -1,186 +1,996 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sergey | Youth Soccer Performance Coach</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    Andrey Krauchanka
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+
+    :root{
+
+      --bg:#101820;
+      --bg2:#17222e;
+
+      --card:#1f2d3b;
+
+      --accent:#d89a5b;
+
+      --text:#ffffff;
+
+      --muted:#c7d0da;
+
+      --line:rgba(255,255,255,.08);
+
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+
+    body{
+
+      background:var(--bg);
+
+      color:var(--text);
+
+      font-family:"Inter",sans-serif;
+
+      overflow-x:hidden;
+
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    .container{
+
+      width:min(1180px,calc(100% - 40px));
+
+      margin:auto;
+
+    }
+
+    section{
+      padding:90px 0;
+    }
+
+    
+
+    /* HERO */
+
+    .hero{ 
+      
+      padding-top:80px; 
+      
+      padding-bottom:60px; 
+      
+      background: linear-gradient( 
+        rgba(12,18,24,.62), 
+        rgba(12,18,24,.72)
+         ), 
+      
+         url("bg.jpg") 
+         center/cover no-repeat; 
+        
+    }
+
+    .hero-content{
+
+      display:grid;
+
+      grid-template-columns:
+      1fr 440px;
+
+      gap:60px;
+
+      align-items:center;
+
+    }
+
+    .hero-label{
+
+      color:var(--accent);
+
+      text-transform:uppercase;
+
+      letter-spacing:2px;
+
+      font-size:.9rem;
+
+      margin-bottom:20px;
+
+      font-weight:700;
+
+    }
+
+    h1{
+
+      font-size:
+      clamp(3.2rem,7vw,6rem);
+
+      line-height:.92;
+
+      letter-spacing:-3px;
+
+      font-weight:900;
+
+      margin-bottom:25px;
+
+    }
+
+    .hero-subtitle{
+
+      color:var(--accent);
+
+      font-size:1.15rem;
+
+      font-weight:700;
+
+      margin-bottom:22px;
+
+    }
+
+    .hero-description{
+
+      color:var(--muted);
+
+      line-height:1.9;
+
+      max-width:580px;
+
+      font-size:1.03rem;
+
+    }
+
+    .hero-buttons{
+
+      display:flex;
+
+      gap:14px;
+
+      flex-wrap:wrap;
+
+      margin-top:36px;
+
+    }
+
+    .button{
+
+      height:54px;
+
+      padding:0 28px;
+
+      border-radius:999px;
+
+      display:inline-flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      font-weight:800;
+
+      transition:.3s;
+
+    }
+
+    .button:hover{
+
+      transform:translateY(-3px);
+
+    }
+
+    .primary{
+
+      background:var(--accent);
+
+      color:white;
+
+    }
+
+    .secondary{
+
+      background:
+      rgba(255,255,255,.06);
+
+      border:
+      1px solid rgba(255,255,255,.08);
+
+    }
+
+    .hero-achievements{
+
+      display:flex;
+
+      flex-wrap:wrap;
+
+      gap:12px;
+
+      margin-top:36px;
+
+    }
+
+    .hero-achievements div{
+
+      padding:13px 18px;
+
+      border-radius:999px;
+
+      background:
+      rgba(255,255,255,.05);
+
+      border:
+      1px solid rgba(255,255,255,.08);
+
+      font-size:.92rem;
+
+      font-weight:700;
+
+    }
+
+    .hero-image img{
+
+      height:620px;
+
+      object-fit:cover;
+
+      border-radius:30px;
+
+      border:
+      1px solid rgba(255,255,255,.08);
+
+    }
+
+    /* GENERAL */
+
+    .section-label{
+
+      text-align:center;
+
+      color:var(--accent);
+
+      letter-spacing:2px;
+
+      text-transform:uppercase;
+
+      font-size:.85rem;
+
+      margin-bottom:18px;
+
+      font-weight:700;
+
+    }
+
+    h2{
+
+      text-align:center;
+
+      font-size:
+      clamp(2rem,5vw,4rem);
+
+      font-weight:900;
+
+      letter-spacing:-2px;
+
+      margin-bottom:25px;
+
+    }
+
+    .text{
+
+      text-align:center;
+
+      max-width:760px;
+
+      margin:auto;
+
+      color:var(--muted);
+
+      line-height:1.9;
+
+    }
+
+    .dark{
+      background:var(--bg2);
+    }
+
+    /* STATS */
+
+    .stats{
+
+      margin-top:55px;
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(240px,1fr));
+
+      gap:22px;
+
+    }
+
+    .card{
+
+      background:var(--card);
+
+      border-radius:28px;
+
+      padding:38px;
+
+      text-align:center;
+
+      border:
+      1px solid rgba(255,255,255,.06);
+
+      transition:.3s;
+
+    }
+
+    .card:hover{
+
+      transform:translateY(-5px);
+
+      border-color:
+      rgba(216,154,91,.35);
+
+    }
+
+    .card span{
+
+      display:block;
+
+      font-size:2.4rem;
+
+      color:var(--accent);
+
+      font-weight:900;
+
+      margin-bottom:14px;
+
+    }
+
+    .card p{
+
+      color:var(--muted);
+
+      line-height:1.7;
+
+    }
+
+    /* BENEFITS */
+
+    .benefits{
+
+      margin-top:55px;
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(3,1fr);
+
+      gap:22px;
+
+      max-width:1000px;
+
+      margin-inline:auto;
+
+    }
+
+    .benefit{
+
+      min-height:180px;
+
+      background:var(--card);
+
+      border-radius:28px;
+
+      padding:34px;
+
+      justify-content:center;
+
+      text-align:center;
+
+      font-weight:800;
+
+      font-size:1.08rem;
+
+      border:
+      1px solid rgba(255,255,255,.06);
+
+      transition:.3s;
+
+    }
+
+    .benefit:hover{
+
+      transform:translateY(-5px);
+
+      border-color:
+      rgba(216,154,91,.35);
+
+    }
+
+    /* GALLERY */
+
+    .gallery{
+
+      margin-top:55px;
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(300px,1fr));
+
+      gap:20px;
+
+    }
+
+    .gallery img{
+
+      height:420px;
+
+      object-fit:cover;
+
+      border-radius:28px;
+
+      border:
+      1px solid rgba(255,255,255,.06);
+
+      transition:.4s;
+
+    }
+
+    .gallery img:hover{
+
+      transform:scale(1.02);
+
+    }
+
+    /* VIDEOS */
+
+    .videos{
+
+      margin-top:55px;
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(50px,500px));
+
+      gap:20px;
+
+    }
+
+    .videos iframe{
+
+      width:auto;
+
+      aspect-ratio:auto;
+
+      border:none;
+
+      border-radius:28px;
+
+    }
+
+    /* CONTACT */
+
+    .contact-grid{
+
+      margin-top:55px;
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(4,1fr);
+
+      gap:22px;
+
+      max-width:auto;
+
+      margin-inline:auto;
+
+    }
+
+    .contact-card{
+
+      padding:36px;
+
+      border-radius:30px;
+
+      background:
+      rgba(255,255,255,.03);
+
+      border:
+      1px solid rgba(255,255,255,.08);
+
+      transition:.3s;
+
+    }
+
+    .contact-card:hover{
+
+      transform:translateY(-5px);
+
+    }
+
+    .phone{
+
+      border-color:
+      rgba(216,154,91,.25);
+
+    }
+
+    .whatsapp{
+
+      border-color:
+      rgba(37,211,102,.22);
+
+    }
+
+    .instagram{
+
+      border-color:
+      rgba(193,53,132,.22);
+
+    }
+
+    .linktree{
+
+      border-color:
+      rgba(58, 193, 53, 0.22);
+
+    }
+
+    .contact-card span{
+
+      display:block;
+
+      color:var(--muted);
+
+      text-transform:uppercase;
+
+      letter-spacing:2px;
+
+      font-size:.78rem;
+
+      margin-bottom:14px;
+
+    }
+
+    .contact-card strong{
+
+      display:block;
+
+      font-size:1.25rem;
+
+      line-height:1.5;
+
+      font-weight:800;
+
+    }
+
+    /* MOBILE */
+
+    @media(max-width:950px){
+
+      section{
+        padding:80px 0;
+      }
+
+      .hero{
+        padding:100px 0 60px;
+      }
+      
+      .hero-content{
+        grid-template-columns:1fr;
+      }
+
+      .hero-image img{
+        height:500px;
+      }
+
+      h1{
+        font-size:4rem;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 <body>
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="logo">SC</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#benefits">Benefits</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#videos">Videos</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </button>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-content">
+
+      <div>
+
+        <p class="hero-label">
+          Chicago • Elite Soccer Performance
+        </p>
+
+        <h1>
+          TRAIN LIKE
+          AN OLYMPIAN
+        </h1>
+
+        <p class="hero-subtitle">
+          Olympic Medalist & Soccer Performance Coach
+        </p>
+
+        <p class="hero-description">
+
+          Elite athletic development for serious young soccer players.
+          Build speed, explosiveness, agility, endurance,
+          confidence, and injury resistance with professional
+          Olympic-level training methods.
+
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="#contact"
+            class="button primary"
+          >
+            Start Training
+          </a>
+
+          <a
+            href="https://www.instagram.com/andrei.krauchanka?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            class="button secondary"
+          >
+            Instagram
+          </a>
+
+        </div>
+
+        <div class="hero-achievements">
+
+          <div>
+            Olympic Medalist
+          </div>
+
+          <div>
+            World-Class Athlete
+          </div>
+
+          <div>
+            Elite Soccer Training
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <img
+          src="andrey.webp"
+          alt="Andrey Krauchanka"
+        />
+
+      </div>
+
     </div>
-  </header>
 
-  <main>
-    <section id="hero" class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <p class="eyebrow">West Dundee • Chicago • Illinois</p>
-          <h1>Sergey</h1>
-          <p class="hero-subtitle">
-Russian-speaking Strength & Conditioning Coach for Young Soccer Players</p>
-          <p class="hero-description">
-Helping young soccer players improve speed, coordination, strength, endurance, and injury resistance through safe and effective training.
-</p>
-          <div class="hero-buttons">
-            <a class="cta-button" href="#contact">Book a Trial Session</a>
-            <a class="secondary-button" href="https://wa.me/15550147791" target="_blank" rel="noreferrer">WhatsApp</a>
-          </div>
-        </div>
+  </section>
 
-        <div class="hero-image">
-          <img src="sergey.jpg" alt="Coach Sergey" />
-        </div>
-      </div>
-    </section>
+  <!-- ABOUT -->
 
-    <section id="about" class="section">
-      <div class="container">
-        <h2>About the Coach</h2>
-        <div class="about-grid">
-          <div class="card">
-            <p>
-              Sergey is a coach from (I don't know about it) based in West Dundee, Chicago, Illinois. He has more than 10 years of experience working with children and teenagers.
-            </p>
-            <p>
-              He works with soccer players ages 9 to 18 and offers both individual and group training.
-            </p>
-          </div>
+  <section>
 
-          <div class="card stats">
-            <div><span>10+</span><p>Years of Experience</p></div>
-            <div><span>9–18</span><p>Age Group</p></div>
-            <div><span>Individual & Personal</span><p>Training Formats</p></div>
-            <div><span>Russian</span><p>Language</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="benefits" class="section section-alt">
-      <div class="container">
-        <h2>Why Parents Choose Me</h2>
-        <div class="grid-4">
-          <div class="card">
-            <h3>Individual Approach</h3>
-            <p>Training is adapted to the child’s age, level, and goals.</p>
-          </div>
-          <div class="card">
-            <h3>Safe Methods</h3>
-            <p>Focus on technique, movement quality, and injury prevention.</p>
-          </div>
-          <div class="card">
-            <h3>Soccer Development</h3>
-            <p>Speed, agility, balance, endurance, and explosive power.</p>
-          </div>
-          <div class="card">
-            <h3>Parent Feedback</h3>
-            <p>Clear communication and progress updates for parents.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Training Benefits</h2>
-        <div class="grid-6">
-          <div class="pill-card">Speed</div>
-          <div class="pill-card">Coordination</div>
-          <div class="pill-card">Endurance</div>
-          <div class="pill-card">Strength</div>
-          <div class="pill-card">Mobility</div>
-          <div class="pill-card">Injury Prevention</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="section section-alt">
-      <div class="container">
-        <h2>Training Gallery</h2>
-        <div class="gallery-grid">
-          <img src="images/training1.jpg" alt="Training 1">
-          <img src="images/training2.jpg" alt="Training 2">
-          <img src="images/training3.jpg" alt="Training 3">
-          <img src="images/training4.jpg" alt="Training 4">
-        </div>
-      </div>
-    </section>
-
-    <section id="videos" class="section">
-      <div class="container">
-        <h2>Training Videos</h2>
-        <div class="video-grid">
-          <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Training video 1" allowfullscreen></iframe>
-          </div>
-          <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g" title="Training video 2" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section section-alt">
-      <div class="container">
-        <h2>Contact</h2>
-
-        <div class="contact-grid">
-          <div class="card contact-card">
-            <p><strong>Phone:</strong> +79131574675</p>
-            <p><strong>WhatsApp:</strong> +79131574675</p>
-            <p><strong>Email:</strong> renatatimofeeva9@gmail.com</p>
-          </div>
-
-          <form class="card form-card" id="parentForm">
-            <h3>Parent Inquiry Form</h3>
-
-            <label for="parentName">Parent Name *</label>
-            <input id="parentName" name="parentName" type="text" required />
-
-            <label for="childName">Child Name</label>
-            <input id="childName" name="childName" type="text" required />
-
-            <label for="childAge">Child Age *</label>
-            <input id="childAge" name="childAge" type="number" min="1" required />
-
-            <label for="email">Parent Email</label>
-            <input id="email" name="email" type="email" required />
-
-            <label for="phone">Parent Phone *</label>
-            <input id="phone" name="phone" type="tel" required />
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit" class="cta-button full">Request a Trial Session</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
     <div class="container">
-      <p> 2026 Sergey. Youth Soccer Strength & Conditioning.</p>
-    </div>
-  </footer>
 
-  <script src="script.js"></script>
+      <p class="section-label">
+        ELITE EXPERIENCE
+      </p>
+
+      <h2>
+        Built For Serious Young Athletes
+      </h2>
+
+      <p class="text">
+
+        Olympic-level athletic preparation designed specifically
+        for young soccer players who want to improve performance,
+        confidence, speed, movement quality, and physical dominance
+        on the field.
+
+      </p>
+
+      <div class="stats">
+
+        <div class="card">
+
+          <span>
+            Olympic
+          </span>
+
+          <p>
+            Medalist & Elite Athlete
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <span>
+            9–18
+          </span>
+
+          <p>
+            Soccer Athlete Development
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <span>
+            Elite
+          </span>
+
+          <p>
+            Performance Training Standards
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BENEFITS -->
+
+  <section class="dark">
+
+    <div class="container">
+
+      <p class="section-label">
+        SOCCER PERFORMANCE
+      </p>
+
+      <h2>
+        What Players Improve
+      </h2>
+
+      <div class="benefits">
+
+        <div class="benefit">
+          Soccer Speed Development
+        </div>
+
+        <div class="benefit">
+          Explosive Power & Acceleration
+        </div>
+
+        <div class="benefit">
+          Agility & Footwork
+        </div>
+
+        <div class="benefit">
+          Match Endurance
+        </div>
+
+        <div class="benefit">
+          Injury Prevention
+        </div>
+
+        <div class="benefit">
+          Confidence & Mental Discipline
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+
+  <section>
+
+    <div class="container">
+
+      <p class="section-label">
+        TRAINING
+      </p>
+
+      <h2>
+        Elite Training Environment
+      </h2>
+
+      <div class="gallery">
+
+        <img src="1.png" alt="" />
+
+        <img src="2.png" alt="" />
+
+        <img src="3.png" alt="" />
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MEDIA -->
+
+  <section class="dark">
+
+    <div class="container">
+
+      <p class="section-label">
+        MEDIA
+      </p>
+
+      <h2>
+        Training Videos
+      </h2>
+
+      <div class="videos">
+
+  <a
+    href="https://www.instagram.com/reel/DS7xcfEERu7/"
+    target="_blank"
+    class="video-card"
+  >
+
+    <img
+      src="video1.jpg"
+      alt=""
+    />
+
+    <div class="video-overlay">
+
+      Watch Training Video
+
+    </div>
+
+  </a>
+
+</div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <p class="section-label">
+        CONTACT
+      </p>
+
+      <h2>
+        Start Training
+      </h2>
+
+      <p class="text">
+
+        Private elite soccer performance training
+        for serious young athletes.
+
+      </p>
+
+      <div class="contact-grid">
+
+        <a
+          href="tel:+79131574675"
+          class="contact-card phone"
+        >
+
+          <span>
+            Mobile
+          </span>
+
+          <strong>
+            +7 (913) 157-46-75
+          </strong>
+
+        </a>
+
+        <a
+          href="https://wa.me/79131574675"
+          target="_blank"
+          class="contact-card whatsapp"
+        >
+
+          <span>
+            WhatsApp
+          </span>
+
+          <strong>
+            Message Directly
+          </strong>
+
+        </a>
+
+        <a
+          href="https://www.instagram.com/andrei.krauchanka?igsh=amw5dG0yd2lodzBy"
+          target="_blank"
+          class="contact-card instagram"
+        >
+
+          <span>
+            Instagram
+          </span>
+
+          <strong>
+            @andrei.krauchanka
+          </strong>
+
+        <a
+          href="https://linktr.ee/andreikrauchanka"
+          target="_blank"
+          class="contact-card linktree"
+        >
+          <span>
+            Linktree
+          </span>
+
+          <strong>
+             Andrey Krauchanka
+          </strong>
+</a>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
 </body>
+
 </html>
+
