@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sergey | Youth Soccer Performance Coach</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">SC</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">West Dundee • Chicago • Illinois</p>
+          <h1>Sergey</h1>
+          <p class="hero-subtitle">
+Russian-speaking Strength & Conditioning Coach for Young Soccer Players</p>
+          <p class="hero-description">
+Helping young soccer players improve speed, coordination, strength, endurance, and injury resistance through safe and effective training.
+</p>
+          <div class="hero-buttons">
+            <a class="cta-button" href="#contact">Book a Trial Session</a>
+            <a class="secondary-button" href="https://wa.me/15550147791" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="sergey.jpg" alt="Coach Sergey" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About the Coach</h2>
+        <div class="about-grid">
+          <div class="card">
+            <p>
+              Sergey is a coach from (I don't know about it) based in West Dundee, Chicago, Illinois. He has more than 10 years of experience working with children and teenagers.
+            </p>
+            <p>
+              He works with soccer players ages 9 to 18 and offers both individual and group training.
+            </p>
+          </div>
+
+          <div class="card stats">
+            <div><span>10+</span><p>Years of Experience</p></div>
+            <div><span>9–18</span><p>Age Group</p></div>
+            <div><span>Individual & Personal</span><p>Training Formats</p></div>
+            <div><span>Russian</span><p>Language</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="section section-alt">
+      <div class="container">
+        <h2>Why Parents Choose Me</h2>
+        <div class="grid-4">
+          <div class="card">
+            <h3>Individual Approach</h3>
+            <p>Training is adapted to the child’s age, level, and goals.</p>
+          </div>
+          <div class="card">
+            <h3>Safe Methods</h3>
+            <p>Focus on technique, movement quality, and injury prevention.</p>
+          </div>
+          <div class="card">
+            <h3>Soccer Development</h3>
+            <p>Speed, agility, balance, endurance, and explosive power.</p>
+          </div>
+          <div class="card">
+            <h3>Parent Feedback</h3>
+            <p>Clear communication and progress updates for parents.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Training Benefits</h2>
+        <div class="grid-6">
+          <div class="pill-card">Speed</div>
+          <div class="pill-card">Coordination</div>
+          <div class="pill-card">Endurance</div>
+          <div class="pill-card">Strength</div>
+          <div class="pill-card">Mobility</div>
+          <div class="pill-card">Injury Prevention</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section section-alt">
+      <div class="container">
+        <h2>Training Gallery</h2>
+        <div class="gallery-grid">
+          <img src="images/training1.jpg" alt="Training 1">
+          <img src="images/training2.jpg" alt="Training 2">
+          <img src="images/training3.jpg" alt="Training 3">
+          <img src="images/training4.jpg" alt="Training 4">
+        </div>
+      </div>
+    </section>
+
+    <section id="videos" class="section">
+      <div class="container">
+        <h2>Training Videos</h2>
+        <div class="video-grid">
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Training video 1" allowfullscreen></iframe>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g" title="Training video 2" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2>Contact</h2>
+
+        <div class="contact-grid">
+          <div class="card contact-card">
+            <p><strong>Phone:</strong> +79131574675</p>
+            <p><strong>WhatsApp:</strong> +79131574675</p>
+            <p><strong>Email:</strong> renatatimofeeva9@gmail.com</p>
+          </div>
+
+          <form class="card form-card" id="parentForm">
+            <h3>Parent Inquiry Form</h3>
+
+            <label for="parentName">Parent Name *</label>
+            <input id="parentName" name="parentName" type="text" required />
+
+            <label for="childName">Child Name</label>
+            <input id="childName" name="childName" type="text" required />
+
+            <label for="childAge">Child Age *</label>
+            <input id="childAge" name="childAge" type="number" min="1" required />
+
+            <label for="email">Parent Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="phone">Parent Phone *</label>
+            <input id="phone" name="phone" type="tel" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="cta-button full">Request a Trial Session</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p> 2026 Sergey. Youth Soccer Strength & Conditioning.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
